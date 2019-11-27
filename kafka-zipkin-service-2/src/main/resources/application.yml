@@ -1,0 +1,21 @@
+server:
+  port: 9001
+spring:
+  zipkin:
+    service:
+      name: service-2
+    base-url: http://192.168.99.100:9411/
+  sleuth:
+    sampler:
+      probabilty: 1
+  kafka:
+    consumer:
+      bootstrap-servers: 192.168.99.100:9092
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: 192.168.99.100:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
